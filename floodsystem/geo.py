@@ -41,3 +41,12 @@ def stations_by_distance(stations,p):
     sorted_distances = sorted_by_key(distances,1)
 
     return sorted_distances
+
+def stations_within_radius(stations, centre, r):
+    stations_in_radius = []
+    for station in stations:
+        distance = haversine(station.coord, centre)
+        if distance <= r:
+            stations_in_radius.append(station)
+
+    return stations_in_radius
