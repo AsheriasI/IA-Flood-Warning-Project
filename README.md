@@ -10,3 +10,4 @@ to start the activity.
 # This is a test comment
 # Replying to test comment
 # This is a test comment (merge)
+# merge test
