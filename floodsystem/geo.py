@@ -7,6 +7,7 @@ geographical data.
 """
 
 from math import radians, cos, sin, asin, sqrt
+from .utils import sorted_by_key  # noqa
 
 def haversine(func_coordinate, func_p):
     """
@@ -27,7 +28,7 @@ def haversine(func_coordinate, func_p):
     r = 6371 # Radius of earth in kilometers. Use 3956 for miles. Determines return value units.
     return c * r
 
-from .utils import sorted_by_key  # noqa
+
 
 def stations_by_distance(stations,p):
     """Given a list of station objects and a coordinate, the function returns a list of tuples
