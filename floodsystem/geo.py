@@ -70,3 +70,25 @@ def stations_by_river(stations):
 def rivers_with_station(stations):
     """Returns the names of rivers on which a station is situated"""
     return set(stations_by_river(stations).keys())
+
+def rivers_by_station_number(stations, N):
+    # Returns a list of tuples (river, number of stations on that river)
+    river_counts = []
+    river_dict = stations_by_river(stations)
+    for (river, river_stations) in river_dict.items():
+        river_counts.append((river, len(river_stations)))
+
+    # sort the list of rivers by number of stations
+    sorted_rivers = sorted_by_key(river_counts, 1, reverse=True)
+
+    sorted_river_subset = []
+    for i in range(N):
+        sorted_river_subset.append(sorted_rivers[i])
+    tie_cond = False
+    while not tie_cond:
+        if sorted_rivers[len(sorted_river_subset)-1] == sorted_rivers[len(sorted_river_subset)]:
+            sorted_river_subset.append(sorted_rivers[len(sorted_river_subset)])
+        else:
+            tie_cond = True
+
+    return sorted_river_subset
