@@ -8,7 +8,7 @@ from floodsystem.stationdata import build_station_list
 
 
 def test_create_monitoring_station():
-
+    '''Checking if the object is instantiated'''
     # Create a station
     s_id = "test-s-id"
     m_id = "test-m-id"
@@ -28,5 +28,6 @@ def test_create_monitoring_station():
     assert s.town == town
 
 def test_inconsistent_typical_range_stations():
+    '''checking the inconsistent stations are indeed forming a list'''
     inconsistent_stations = inconsistent_typical_range_stations(build_station_list())
     assert len(inconsistent_stations) > 0
