@@ -35,9 +35,12 @@ def stations_by_distance(stations,p):
     distances = []
     for station in stations:
         coordinate = station.coord
+    
+    # Apply haversine to find distances and attribute to tuple list
         distance = haversine(coordinate, p)
         distances.append((station, distance))
-
+    
+    # Sort list by distances
     sorted_distances = sorted_by_key(distances,1)
 
     return sorted_distances
@@ -45,7 +48,9 @@ def stations_by_distance(stations,p):
 def stations_within_radius(stations, centre, r):
     stations_in_radius = []
     for station in stations:
+        # Find distances from defined centre
         distance = haversine(station.coord, centre)
+        # Define validity of difference and if to add to list
         if distance <= r:
             stations_in_radius.append(station)
 
@@ -78,13 +83,15 @@ def rivers_by_station_number(stations, N):
     for (river, river_stations) in river_dict.items():
         river_counts.append((river, len(river_stations)))
 
-    # sort the list of rivers by number of stations
+    # sort the list of rivers by number of stations, from highest to lowest
     sorted_rivers = sorted_by_key(river_counts, 1, reverse=True)
 
     sorted_river_subset = []
+    # Adds the highest value rivers to list until N
     for i in range(N):
         sorted_river_subset.append(sorted_rivers[i])
     tie_cond = False
+    # Adds any rivers with equal value to Nth term to the list
     while not tie_cond:
         if sorted_rivers[len(sorted_river_subset)-1] == sorted_rivers[len(sorted_river_subset)]:
             sorted_river_subset.append(sorted_rivers[len(sorted_river_subset)])
