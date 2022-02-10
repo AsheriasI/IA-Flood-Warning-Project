@@ -50,3 +50,23 @@ def stations_within_radius(stations, centre, r):
             stations_in_radius.append(station)
 
     return stations_in_radius
+
+def stations_by_river(stations):
+    """Returns a dictionary containing rivers (keys), and the stations on each river (values)"""
+    rivers = {}
+    for station in stations:
+        # only add the river if station.river has been set
+        river = station.river
+        if river is not None:
+            # add the station to the river key in the dictionary
+            # if the key is not in the dictionary, add it
+            if river in rivers:
+                rivers[river].append(station)
+            else:
+                rivers[river] = [station]
+
+    return rivers
+    
+def rivers_with_station(stations):
+    """Returns the names of rivers on which a station is situated"""
+    return set(stations_by_river(stations).keys())
