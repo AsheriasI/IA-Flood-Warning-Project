@@ -46,12 +46,13 @@ class MonitoringStation:
         (low, high) = self.typical_range
         return high >= low
 
-    def inconsistent_typical_range_stations(stations):
-        '''Returns list of stations that have inconsistent data'''
-        inconsistent_stations = []
-        for station in stations:
-            consistent = station.typical_range_consistent()
-            if not consistent:
-                inconsistent_stations.append(station)
 
-        return inconsistent_stations
+def inconsistent_typical_range_stations(stations):
+    '''Returns list of stations that have inconsistent data'''
+    inconsistent_stations = []
+    for station in stations:
+        consistent = station.typical_range_consistent()
+        if not consistent:
+            inconsistent_stations.append(station)
+
+    return inconsistent_stations
