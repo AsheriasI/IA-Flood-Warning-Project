@@ -7,6 +7,7 @@ def run():
     inconsistent_stations = inconsistent_typical_range_stations(stations)
     station_names = []
 
+    #adds the needed stations to the list and sorts
     for station in inconsistent_stations:
         station_names.append(station.name)
     station_names.sort()

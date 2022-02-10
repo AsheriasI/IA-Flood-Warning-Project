@@ -6,7 +6,11 @@ def run():
     stations = build_station_list()
     centre = (52.2053, 0.1218)
     r = 10
+
+    #getting stations within the specified radius
     stations_in_r = stations_within_radius(stations, centre, r)
+    
+    #making list and sorting
     station_names = []
     for station in stations_in_r:
         station_names.append(station.name)
