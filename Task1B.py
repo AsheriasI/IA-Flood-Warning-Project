@@ -4,6 +4,8 @@ from floodsystem.stationdata import build_station_list
 def run():
     # Build list of stations
     stations = build_station_list()
+    
+    #setting the coordinates of the cambridge city centre to measure from
     p = (52.2053, 0.1218)
     distances = stations_by_distance(stations, p)
     station_names = []
