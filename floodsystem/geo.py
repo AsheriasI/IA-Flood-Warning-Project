@@ -89,12 +89,12 @@ def rivers_by_station_number(stations, N):
 
     sorted_river_subset = []
     # Adds the highest value rivers to list until N
-    for i in range(N):
+    for i in range(0,N):
         sorted_river_subset.append(sorted_rivers[i])
     tie_cond = False
     # Adds any rivers with equal value to Nth term to the list
     while not tie_cond:
-        if sorted_rivers[len(sorted_river_subset)-1] == sorted_rivers[len(sorted_river_subset)]:
+        if sorted_rivers[len(sorted_river_subset)-1][1] == sorted_rivers[len(sorted_river_subset)][1]:
             sorted_river_subset.append(sorted_rivers[len(sorted_river_subset)])
         else:
             tie_cond = True
