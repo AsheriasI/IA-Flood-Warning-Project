@@ -7,11 +7,7 @@
 
 
 from floodsystem.stationdata import build_station_list, update_water_levels
-from floodsystem.datafetcher import fetch_measure_levels
-from floodsystem.flood import stations_highest_rel_level, towns_highest_rel_level
-from floodsystem.plot import plot_water_level_with_fit
-
 stations = build_station_list()
-update_water_levels(stations)
-at_risk_towns = towns_highest_rel_level(stations, N)
-print(at_risk_towns)
+for station in stations:
+	print("station is " + station.name)
+	print("town is " + station.town)
