@@ -20,11 +20,14 @@ def stations_highest_rel_level(stations, N):
     water_level_stations = []
     for station in stations:
         relative_level = station.relative_water_level()
-        if relative_level is not None:
+        if (relative_level is not None) :
             station_info = (station, relative_level)
             water_level_stations.append(station_info)
 
     sorted_by_water_level = sorted_by_key(water_level_stations, 1, True)
+    #basset is broken :/
+    sorted_by_water_level.pop(0)
     sorted_stations = [i[0] for i in sorted_by_water_level]
+    
 
     return sorted_stations[:N]
