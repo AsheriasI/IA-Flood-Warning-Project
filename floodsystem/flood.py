@@ -1,4 +1,5 @@
 from floodsystem.utils import sorted_by_key
+from floodsystem.stationdata import build_station_list, update_water_levels
 
 def stations_level_over_threshold(stations, tol):
     """Returns a list of tuples, each holding a station at which the latest relative
@@ -49,3 +50,7 @@ def towns_highest_rel_level(stations, N):
     
 
     return sorted_towns[:N]
+
+for station in stations:
+	print("station is " + station.name)
+	print("town is " + station.town)
