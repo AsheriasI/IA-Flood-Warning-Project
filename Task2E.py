@@ -20,5 +20,5 @@ def run():
         plt.show()
 
 if __name__ == "__main__":
-    print("*** Task 2F: CUED Part IA Flood Warning System ***")
+    print("*** Task 2E: CUED Part IA Flood Warning System ***")
     run()
