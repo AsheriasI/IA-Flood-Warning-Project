@@ -50,7 +50,3 @@ def towns_highest_rel_level(stations, N):
     
 
     return sorted_towns[:N]
-
-for station in stations:
-	print("station is " + station.name)
-	print("town is " + station.town)
