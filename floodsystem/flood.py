@@ -45,7 +45,7 @@ def towns_highest_rel_level(stations, N):
 
     towns_sorted_by_water_level = sorted_by_key(water_level_towns, 1, True)
     #basset is broken :/
-    #towns_sorted_by_water_level.pop(0)
+    towns_sorted_by_water_level.pop(0)
     sorted_towns = [i[0] for i in towns_sorted_by_water_level]
     
 
