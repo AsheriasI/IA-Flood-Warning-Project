@@ -8,4 +8,4 @@ def test_station_level_over_threshold():
 
 def test_stations_highest_rel_level():
     stations = build_station_list()
-    assert type(flood.stations_highest_rel_level(stations, 10)) != None
+    flood.stations_highest_rel_level(stations, 10)
