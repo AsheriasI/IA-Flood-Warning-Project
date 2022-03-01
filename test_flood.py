@@ -11,3 +11,8 @@ def test_stations_highest_rel_level():
     stations = build_station_list()
     update_water_levels(stations)
     flood.stations_highest_rel_level(stations, 10)
+
+def test_towns_highest_rel_level():
+    stations = build_station_list()
+    update_water_levels(stations)
+    flood.towns_highest_rel_level(stations, 10)
